@@ -1,4 +1,3 @@
-# pip install pycryptodome
 import base64
 import string
 import random
@@ -107,9 +106,7 @@ def __encode__(to_encode, iv, key):
 
 
 def __decode__(to_decode, iv, key):
-    # Decode
     to_decode = base64.b64decode(to_decode)
-    # Decrypt
     c = AES.new(key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
     to_decode = c.decrypt(to_decode)
     if type(to_decode) == bytes:
